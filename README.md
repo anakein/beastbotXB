@@ -1,7 +1,11 @@
 Hello;
 This repo is the job of comparing, viewing, adding, removing code from other strategies and finally adding your own code according to conditions, technical analysis, and many hyperopts.
 
-I have added 2 versions, one with more risk and one with less, and the results obtained in the last 2 months with a bearish and unfavorable market.
+only use NWEv6 Version.
+
+in the working folder is the updated file of the latest version working in live and dry-run. it doesn't work in backtesting.
+
+I have added the database, so you can see that in the worst month of the last years with huge falls, it has rise 4,95% in 20 days
 
 gracias
 
