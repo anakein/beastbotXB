@@ -1,0 +1,79 @@
+{
+    "max_open_trades": 4,
+    "stake_currency": "USDT",
+    "stake_amount" : 700,
+    "amend_last_stake_amount ": true,
+    "tradable_balance_ratio": 0.99,
+    "fiat_display_currency": "USD",
+    "dry_run": true,
+    "dry_run_wallet": 3000,
+    "cancel_open_orders_on_exit": false,
+    "ignore_buying_expired_candle_after" : 90,
+    "unfilledtimeout": {
+        "entry": 30,
+        "exit": 10,
+        "unit": "seconds"
+    },
+    "order_types": {
+        "buy": "market",
+        "sell": "market",
+        "emergency_exit": "market",
+        "trailing_stop_loss": "market",
+        "stoploss": "market",
+        "stoploss_on_exchange": false,
+        "stoploss_on_exchange_interval": 60
+    },
+    "entry_pricing": {
+        "price_side": "ask",
+        "price_last_balance": 0.0,
+        "use_order_book": false,
+        "order_book_top": 1,
+        "check_depth_of_market": {
+            "enabled": false,
+            "bids_to_ask_delta": 1
+        }
+    },
+    "exit_pricing": {
+        "price_side": "bid",
+        "use_order_book": true
+    },
+     "pairlists": [
+        {
+			"method": "VolumePairList",
+			"number_assets": 45,
+			"sort_key": "quoteVolume",
+			"refresh_period": 4800
+		},
+		{"method": "PriceFilter", "min_price": 0.01},
+		{"method": "AgeFilter", "min_days_listed": 30},
+		{
+			"method": "RangeStabilityFilter",
+			"lookback_days": 3,
+			"min_rate_of_change": 0.0005,
+			"refresh_period": 4800
+		},
+		{
+			"method": "VolatilityFilter",
+			"lookback_days": 3,
+			"min_volatility": 0.02,
+			"max_volatility": 0.75,
+			"refresh_period": 43200
+		},
+        {"method": "ShuffleFilter"}
+    ],
+    "edge": {
+        "enabled": false,
+        "process_throttle_secs": 3600,
+        "calculate_since_number_of_days": 7,
+        "allowed_risk": 0.01,
+        "stoploss_range_min": -0.01,
+        "stoploss_range_max": -0.1,
+        "stoploss_range_step": -0.01,
+        "minimum_winrate": 0.60,
+        "minimum_expectancy": 0.20,
+        "min_trade_number": 3,
+        "max_trade_duration_minute": 1440,
+        "remove_pumps": false
+    },
+
+}
